@@ -40,7 +40,7 @@ export default function Leaderboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle>Ramadan Leaderboard</CardTitle>
-                  <CardDescription>See who&apos;s leading in spiritual progress</CardDescription>
+                  <CardDescription className=" hidden sm:block">See who&apos;s leading in spiritual progress</CardDescription>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="relative">
@@ -58,7 +58,7 @@ export default function Leaderboard() {
                   <TabsTrigger value="local">Local Community</TabsTrigger>
                 </TabsList>
                 <TabsContent value="global" className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <Card className="bg-yellow-500/10 border-yellow-500/20">
                       <CardContent className="p-6">
                         <div className="flex flex-col items-center text-center">
@@ -145,28 +145,30 @@ export default function Leaderboard() {
                     </Card>
                   </div>
 
-                  <div className="rounded-md border">
-                    <div className="relative w-full overflow-auto">
-                      <table className="w-full caption-bottom text-sm">
+                  <div className="rounded-md border overflow-hidden">
+                    {/* Desktop Table View */}
+                    <div className="relative w-full overflow-x-auto hidden md:block">
+                      <table className="w-full caption-bottom text-sm min-w-[800px]">
+
                         <thead className="[&_tr]:border-b">
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                            <th className="h-12 px-4 text-left align-middle font-medium">Rank</th>
-                            <th className="h-12 px-4 text-left align-middle font-medium">User</th>
-                            <th className="h-12 px-4 text-left align-middle font-medium">Level</th>
-                            <th className="h-12 px-4 text-left align-middle font-medium">XP</th>
-                            <th className="h-12 px-4 text-left align-middle font-medium">Streak</th>
-                            <th className="h-12 px-4 text-left align-middle font-medium">Actions</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">Rank</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">User</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">Level</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">XP</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">Streak</th>
+                            <th className="h-10 sm:h-12 px-2 sm:px-4 text-left align-middle font-medium whitespace-nowrap">Actions</th>
                           </tr>
                         </thead>
                         <tbody className="[&_tr:last-child]:border-0">
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-yellow-500 text-white font-bold">
                                 1
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
-                              <div className="flex items-center gap-3">
+                            <td className="p-2 sm:p-4 align-middle">
+                              <div className="flex items-center gap-2 sm:gap-3">
                                 <Avatar className="h-8 w-8">
                                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                                   <AvatarFallback>MK</AvatarFallback>
@@ -177,7 +179,7 @@ export default function Leaderboard() {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge
                                 variant="outline"
                                 className="bg-yellow-500/20 text-yellow-700 border-yellow-500/30"
@@ -185,22 +187,22 @@ export default function Leaderboard() {
                                 Level 9
                               </Badge>
                             </td>
-                            <td className="p-4 align-middle">5,240 XP</td>
-                            <td className="p-4 align-middle">15 days</td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">5,240 XP</td>
+                            <td className="p-2 sm:p-4 align-middle">15 days</td>
+                            <td className="p-2 sm:p-4 align-middle">
                               <Button variant="outline" size="sm">
                                 View Profile
                               </Button>
                             </td>
                           </tr>
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-500 text-white font-bold">
                                 2
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
-                              <div className="flex items-center gap-3">
+                            <td className="p-2 sm:p-4 align-middle">
+                              <div className="flex items-center gap-2 sm:gap-3">
                                 <Avatar className="h-8 w-8">
                                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                                   <AvatarFallback>FH</AvatarFallback>
@@ -211,27 +213,27 @@ export default function Leaderboard() {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge variant="outline" className="bg-slate-500/20 text-slate-700 border-slate-500/30">
                                 Level 8
                               </Badge>
                             </td>
-                            <td className="p-4 align-middle">4,890 XP</td>
-                            <td className="p-4 align-middle">12 days</td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">4,890 XP</td>
+                            <td className="p-2 sm:p-4 align-middle">12 days</td>
+                            <td className="p-2 sm:p-4 align-middle">
                               <Button variant="outline" size="sm">
                                 View Profile
                               </Button>
                             </td>
                           </tr>
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-amber-500 text-white font-bold">
                                 3
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
-                              <div className="flex items-center gap-3">
+                            <td className="p-2 sm:p-4 align-middle">
+                              <div className="flex items-center gap-2 sm:gap-3">
                                 <Avatar className="h-8 w-8">
                                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                                   <AvatarFallback>YA</AvatarFallback>
@@ -242,27 +244,27 @@ export default function Leaderboard() {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge variant="outline" className="bg-amber-500/20 text-amber-700 border-amber-500/30">
                                 Level 8
                               </Badge>
                             </td>
-                            <td className="p-4 align-middle">4,560 XP</td>
-                            <td className="p-4 align-middle">14 days</td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">4,560 XP</td>
+                            <td className="p-2 sm:p-4 align-middle">14 days</td>
+                            <td className="p-2 sm:p-4 align-middle">
                               <Button variant="outline" size="sm">
                                 View Profile
                               </Button>
                             </td>
                           </tr>
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted bg-primary/5">
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-muted text-muted-foreground font-bold">
                                 4
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
-                              <div className="flex items-center gap-3">
+                            <td className="p-2 sm:p-4 align-middle">
+                              <div className="flex items-center gap-2 sm:gap-3">
                                 <Avatar className="h-8 w-8">
                                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                                   <AvatarFallback>AA</AvatarFallback>
@@ -273,23 +275,23 @@ export default function Leaderboard() {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge>Level 7</Badge>
                             </td>
-                            <td className="p-4 align-middle">3,240 XP</td>
-                            <td className="p-4 align-middle">12 days</td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">3,240 XP</td>
+                            <td className="p-2 sm:p-4 align-middle">12 days</td>
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge>You</Badge>
                             </td>
                           </tr>
                           <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-muted text-muted-foreground font-bold">
                                 5
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
-                              <div className="flex items-center gap-3">
+                            <td className="p-2 sm:p-4 align-middle">
+                              <div className="flex items-center gap-2 sm:gap-3">
                                 <Avatar className="h-8 w-8">
                                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                                   <AvatarFallback>ZI</AvatarFallback>
@@ -300,12 +302,12 @@ export default function Leaderboard() {
                                 </div>
                               </div>
                             </td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">
                               <Badge variant="outline">Level 7</Badge>
                             </td>
-                            <td className="p-4 align-middle">3,120 XP</td>
-                            <td className="p-4 align-middle">10 days</td>
-                            <td className="p-4 align-middle">
+                            <td className="p-2 sm:p-4 align-middle">3,120 XP</td>
+                            <td className="p-2 sm:p-4 align-middle">10 days</td>
+                            <td className="p-2 sm:p-4 align-middle">
                               <Button variant="outline" size="sm">
                                 View Profile
                               </Button>
